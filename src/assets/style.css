@@ -1,0 +1,428 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.background {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+  min-height: 100vh;
+  padding: 40px 20px;
+
+  background-image: url("img/pattern2.jpg");
+  background-size: 40%;
+  font-family: futura, sans-serif;
+}
+
+input[type="text"] {
+  padding: 5px 10px;
+  margin: 2px 2px;
+  border: 2px solid black;
+  font-family: futura, sans-serif;
+  font-size: 1rem;
+}
+
+button {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 2px 2px;
+  font-family: futura, sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(238, 232, 232);
+}
+
+header {
+  width: 90vw;
+  max-width: 800px;
+  height: 10vh;
+  min-height: 80px;
+  background-image: url("img/backTop.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top;
+}
+
+footer {
+  width: 90vw;
+  max-width: 800px;
+  height: 10vh;
+  min-height: 80px;
+  background-image: url("img/backBottom.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+}
+
+#folder-container {
+  width: 90vw;
+  max-width: 800px;
+}
+
+main {
+  width: 90vw;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: fit-content;
+  padding: 10px 60px;
+
+  background-image: url("img/backMiddle.png");
+  background-repeat: repeat-y;
+  background-position: center;
+  background-size: 100%;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+}
+
+.input-panel {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+}
+
+.inputTask {
+  width: 100%;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.inputDate {
+  width: 100%;
+  border-radius: 0px;
+}
+
+.addButton {
+  width: 250px;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.todo-list {
+  width: 100%;
+  max-width: 800px;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px 0px;
+  border-bottom: 1px solid #272525;
+  font-weight: 100;
+  color: #333333;
+}
+
+.inputWrapper1 {
+  flex: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.inputWrapper2 {
+  flex: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.item-title {
+  margin: 0 20px;
+  font-size: 2rem;
+  word-break: break-word;
+}
+
+.item-date {
+  font-size: 1.5rem;
+  margin: 5px 20px 0 auto;
+}
+
+input[type="checkbox"] {
+  opacity: 1;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+}
+
+input[type="checkbox"]:checked + p {
+  text-decoration: line-through;
+}
+
+.clearButton {
+  margin-top: 20px;
+}
+
+/* FOLDER PANEL */
+.folder-panel {
+  display: flex;
+  width: 90vw;
+  padding: 30px;
+}
+
+.noteBox {
+  position: relative;
+  width: 80px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.noteBox img {
+  width: 100%;
+}
+
+.folderBox {
+  position: relative;
+  width: 100px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.folder-panel h2 {
+  display: block;
+  position: absolute;
+  font-weight: lighter;
+  font-size: 1rem;
+  width: fit-content;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.folderOpen {
+  display: none;
+  width: 110%;
+}
+
+.folderClosed {
+  display: block;
+  width: 100%;
+}
+
+.folderBox:hover .folderOpen {
+  display: block;
+}
+
+.folderBox:hover .folderClosed {
+  display: none;
+}
+
+.folderBox:hover h2 {
+  display: none;
+}
+
+/* POPUP */
+
+.popUp {
+  position: absolute;
+  width: 400px;
+  z-index: 1;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popUp > * {
+  position: absolute;
+}
+
+.popUp .noteInput {
+  top: 20%;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.popUp .noteInput .noteText {
+  margin-top: 10%;
+}
+
+.closePopup {
+  width: fit-content;
+  cursor: pointer;
+}
+
+/* STICKY NOTE */
+.note-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sticky-note {
+  width: fit-content;
+  min-width: 120px;
+  height: fit-content;
+  background-color: salmon;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 5px;
+  resize: both;
+  overflow: auto;
+  margin: 10px;
+}
+
+.topNote {
+  width: 100%;
+  display: flex;
+  padding: 3px;
+  border-bottom: 2px solid black;
+  margin-bottom: 5px;
+}
+
+.deleteNoteButton {
+  cursor: pointer;
+  width: fit-content;
+  margin-left: auto;
+}
+
+.changeColor {
+  cursor: pointer;
+}
+
+textarea {
+  background-color: inherit;
+  border: none;
+  font-family: futura, sans-serif;
+  font-size: 1rem;
+  resize: none;
+}
+
+/* RANDOM IMAGE */
+
+.randomImage-panel {
+  position: absolute;
+  width: 350px;
+  height: fit-content;
+  z-index: 0.5;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.randomImage {
+  position: absolute;
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.randomImage-closeBtn {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+/* RANDOM QUOTE */
+
+.randomQuote-panel {
+  position: absolute;
+  width: 350px;
+  height: 200px;
+  z-index: 0.5;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: lightcoral;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.randomQuote {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+@media only screen and (max-width: 630px) {
+  .input-panel {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .inputTask {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .inputDate {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .addButton {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .item-date {
+    font-size: 1.5rem;
+    margin: 5px 20px 0 0;
+  }
+
+  .deleteButton {
+    margin-left: auto;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  header,
+  footer {
+    min-height: 0px;
+    height: 50px;
+  }
+
+  main {
+    padding: 10px 20px;
+  }
+
+  .item-title,
+  .item-date {
+    font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 0.7rem;
+  }
+
+  input[type="checkbox"] {
+    margin-top: 0;
+  }
+
+  .randomImage-panel,
+  .randomQuote-panel,
+  .popUp {
+    width: 280px;
+  }
+
+  .popUp .noteInput .noteText {
+    margin-top: 5%;
+  }
+}
