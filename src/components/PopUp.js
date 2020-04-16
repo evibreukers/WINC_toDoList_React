@@ -9,8 +9,8 @@ function PopUp(props) {
         src={require("../assets/img/popup.png")}
         alt="problem?"
       />
-      <div className="noteInput">
-        <p className="closePopup" onClick={props.closePopup}>
+      <div className="popup-input-panel">
+        <p className="closePopupBtn" onClick={props.closePopup}>
           X
         </p>
         <input
@@ -20,7 +20,7 @@ function PopUp(props) {
           placeholder="write note"
           onChange={props.handleInput}
         />
-        <button className="addNoteButton" onClick={props.handleSubmit}>
+        <button className="addNoteBtn" onClick={props.handleSubmit}>
           ADD NOTE
         </button>
       </div>

@@ -1,5 +1,7 @@
 import React from "react";
-import ToDoListUI from "./ToDoListUI";
+import InputField from "./InputField";
+import ClearButton from "./ClearButton";
+import ToDoItem from "./ToDoItem";
 
 class ToDoList extends React.Component {
   constructor() {
@@ -77,15 +79,28 @@ class ToDoList extends React.Component {
   }
 
   render() {
+    const displayItems = this.state.toDoItems.map((task) => {
+      return (
+        <ToDoItem
+          key={task.id}
+          id={task.id}
+          title={task.title}
+          date={task.date}
+          isChecked={task.isChecked}
+          handleInput={this.handleInput}
+          handleDelete={this.handleDelete}
+        />
+      );
+    });
     return (
-      <ToDoListUI
-        handleInput={this.handleInput}
-        handleSubmit={this.handleSubmit}
-        handleDelete={this.handleDelete}
-        handleClearAll={this.handleClearAll}
-        // pass down all the properties of this.state
-        data={this.state}
-      />
+      <div className="todo-container">
+        <InputField
+          handleInput={this.handleInput}
+          handleSubmit={this.handleSubmit}
+        />
+        <ul className="todo-list">{displayItems}</ul>
+        <ClearButton handleClearAll={this.handleClearAll} />
+      </div>
     );
   }
 }

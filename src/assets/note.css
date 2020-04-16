@@ -1,0 +1,44 @@
+/* STICKY NOTE */
+.note-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sticky-note {
+  width: fit-content;
+  min-width: 120px;
+  height: fit-content;
+  background-color: salmon;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 5px;
+  resize: both;
+  overflow: auto;
+  margin: 10px;
+}
+
+.noteHeader {
+  width: 100%;
+  display: flex;
+  padding: 3px;
+  border-bottom: 2px solid black;
+  margin-bottom: 5px;
+}
+
+.deleteNoteBtn {
+  cursor: pointer;
+  width: fit-content;
+  margin-left: auto;
+}
+
+.changeColorBtn {
+  cursor: pointer;
+}
+
+textarea {
+  background-color: inherit;
+  border: none;
+  font-family: futura, sans-serif;
+  font-size: 1rem;
+  resize: none;
+}

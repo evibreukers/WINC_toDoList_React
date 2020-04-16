@@ -1,6 +1,7 @@
 import React from "react";
 import PopUp from "./PopUp";
 import randomColor from "randomcolor";
+import StickyNote from "./StickyNote";
 
 class Notes extends React.Component {
   constructor() {
@@ -15,7 +16,6 @@ class Notes extends React.Component {
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
-    this.handleEdit = this.handleEdit.bind(this);
     this.handleColorChange = this.handleColorChange.bind(this);
   }
 
@@ -53,18 +53,8 @@ class Notes extends React.Component {
   }
 
   handleDelete(event) {
-    const updateNotes = this.state.notes.filter((item) => {
-      return item.id !== parseInt(event.target.parentElement.parentElement.id);
-    });
-    this.setState({ notes: updateNotes });
-  }
-
-  handleEdit(event) {
-    const updateNotes = this.state.notes.filter((item) => {
-      if (item.id === parseInt(event.target.parentElement.id)) {
-        item.text = event.target.value;
-      }
-      return item;
+    const updateNotes = this.state.notes.filter((note) => {
+      return note.id !== parseInt(event.target.parentElement.parentElement.id);
     });
     this.setState({ notes: updateNotes });
   }
@@ -78,25 +68,18 @@ class Notes extends React.Component {
     });
     this.setState({ notes: updateNotes });
   }
+
   render() {
     const displayNotes = this.state.notes.map((note) => {
       return (
-        <div
-          className="sticky-note"
+        <StickyNote
           key={note.id}
           id={note.id}
-          style={{ backgroundColor: note.color }}
-        >
-          <div className="topNote">
-            <p className="changeColor" onClick={this.handleColorChange}>
-              new color
-            </p>
-            <p className="deleteNoteButton" onClick={this.handleDelete}>
-              X
-            </p>
-          </div>
-          <textarea onClick={this.handleEdit}>{note.text}</textarea>
-        </div>
+          text={note.text}
+          color={note.color}
+          handleColorChange={this.handleColorChange}
+          handleDelete={this.handleDelete}
+        />
       );
     });
     return (

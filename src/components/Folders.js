@@ -63,9 +63,9 @@ class Folders extends React.Component {
 
   render() {
     return (
-      <div id="folder-container">
-        <div className="folder-panel">
-          <div className="folderBox" onClick={this.handleNewImg}>
+      <div className="bottomWrapper">
+        <div className="icon-container">
+          <div className="folder-icon-panel" onClick={this.handleNewImg}>
             <img
               className="folderClosed"
               src={require("../assets/img/folder_closed.png")}
@@ -79,7 +79,7 @@ class Folders extends React.Component {
             <h2>image</h2>
           </div>
 
-          <div className="folderBox" onClick={this.handleQuote}>
+          <div className="folder-icon-panel" onClick={this.handleQuote}>
             <img
               className="folderClosed"
               src={require("../assets/img/folder_closed.png")}
@@ -93,12 +93,8 @@ class Folders extends React.Component {
             <h2>quote</h2>
           </div>
 
-          <div className="noteBox" onClick={this.handlePopup}>
-            <img
-              className="note"
-              src={require("../assets/img/note.png")}
-              alt="problem?"
-            />
+          <div className="note-icon-panel" onClick={this.handlePopup}>
+            <img src={require("../assets/img/note.png")} alt="problem?" />
             <h2>+</h2>
           </div>
         </div>

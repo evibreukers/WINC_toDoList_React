@@ -17,7 +17,7 @@ function InputField(props) {
         onChange={props.handleInput}
         placeholder="end-date"
       />
-      <button className="addButton" onClick={props.handleSubmit}>
+      <button className="addTaskBtn" onClick={props.handleSubmit}>
         ADD ITEM
       </button>
     </div>

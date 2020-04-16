@@ -1,0 +1,80 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.mainWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+  min-height: 100vh;
+  padding: 40px 20px;
+
+  background-image: url("img/pattern2.jpg");
+  background-size: 40%;
+  font-family: futura, sans-serif;
+}
+
+input[type="text"] {
+  padding: 5px 10px;
+  margin: 2px 2px;
+  border: 2px solid black;
+  font-family: futura, sans-serif;
+  font-size: 1rem;
+}
+
+button {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 2px 2px;
+  font-family: futura, sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(238, 232, 232);
+}
+
+header {
+  width: 90vw;
+  max-width: 800px;
+  height: 10vh;
+  min-height: 80px;
+  background-image: url("img/backTop.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top;
+}
+
+footer {
+  width: 90vw;
+  max-width: 800px;
+  height: 10vh;
+  min-height: 80px;
+  background-image: url("img/backBottom.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+}
+
+main {
+  width: 90vw;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: fit-content;
+  padding: 10px 60px;
+
+  background-image: url("img/backMiddle.png");
+  background-repeat: repeat-y;
+  background-position: center;
+  background-size: 100%;
+}

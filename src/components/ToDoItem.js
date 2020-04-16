@@ -14,7 +14,7 @@ function ToDoItem(props) {
 
       <div className="inputWrapper2">
         <p className="item-date">{props.date}</p>
-        <button className="deleteButton" onClick={props.handleDelete}>
+        <button className="deleteTaskBtn" onClick={props.handleDelete}>
           DELETE
         </button>
       </div>
