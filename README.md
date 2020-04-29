@@ -1,4 +1,4 @@
-# playList React
+# toDoList React
 
 Winc Academy's 5th project of the Front-end Development traineeship.
 
