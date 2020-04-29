@@ -32,6 +32,7 @@ HTML, CSS, JavaScript, React.
 Take a look: 
 https://awsome-to-do-list-react.netlify.app
 
-![alt text](/public/preview.png)
+![alt text](/public/preview1.png)
+![alt text](/public/preview2.png)
 
 ENJOY!
